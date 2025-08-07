@@ -1,0 +1,36 @@
+# role.yaml
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  namespace: development
+  name: admin
+rules:
+  - apiGroups: [""]
+    resources: ["*"]
+    verbs: ["*"]
+---
+
+# role.yaml
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  namespace: development
+  name: developer
+rules:
+  - apiGroups: [""]
+    resources: ["*"]
+    verbs: ["get", "list", "create", "update", "delete"]
+
+---
+
+# role.yaml
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  namespace: development
+  name: view
+rules:
+  - apiGroups: [""]
+    resources: ["*"]
+    verbs: ["get", "list"]
+
